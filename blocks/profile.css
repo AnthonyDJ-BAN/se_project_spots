@@ -1,8 +1,6 @@
 .profile {
   display: flex;
   padding: 34px 0 20px;
-  margin: 0 80px 0;
-  justify-content: space-between;
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 }
 
@@ -50,6 +48,7 @@
 
 .profile__edit-btn:hover {
   cursor: pointer;
+  opacity: 60%;
 }
 
 .profile__add-btn {
@@ -60,10 +59,16 @@
   width: 149px;
   height: 52px;
   align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
 }
 
 .profile__add-btn:hover {
   cursor: pointer;
+  opacity: 80%;
 }
 
 @media screen and (max-width: 627px) {
