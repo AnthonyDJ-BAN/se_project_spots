@@ -9,10 +9,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s 0.6s,
+    opacity 0.6s linear;
+  background-color: #00000080;
+  position: fixed;
 }
 
 .modal_is-opened {
   visibility: visible;
+  isibility: visible;
+  opacity: 1;
+  transition: opacity 0.6s linear;
 }
 
 .modal__container {
@@ -98,4 +108,8 @@
   color: #fff;
   gap: 8px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+.modal__submit-btn:hover {
+  cursor: pointer;
 }
