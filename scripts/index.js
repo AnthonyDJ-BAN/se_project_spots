@@ -54,14 +54,14 @@ function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  closeModal(newPostModal);
+  closeModal(editProfileModal);
 }
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   console.log("Image Link:", cardLinkInput.value);
   console.log("Caption:", cardCaptionInput.value);
-  closeModal(editProfileModal);
+  closeModal(newPostModal);
   evt.target.reset();
 }
 
