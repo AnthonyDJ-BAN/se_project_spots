@@ -258,7 +258,7 @@ api
 
     profileNameEl.textContent = userData.name;
     profileDescriptionEl.textContent = userData.about;
-    profileAvatar.src = userData.avatar; // <-- Add this line
+    profileAvatar.src = userData.avatar;
   })
   .catch((err) => {
     console.error(err);
