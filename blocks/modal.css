@@ -9,16 +9,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
   opacity: 0;
   transition:
     visibility 0s 0.6s,
     opacity 0.6s linear;
-  padding: 0 10px;
-  z-index: 999;
+  background-color: #00000080;
+  position: fixed;
+  padding: 0, 10px;
 }
 
 .modal_type_preview {
-  padding: 0 16px;
+  padding: 0, 16px;
 }
 
 .modal_is-opened {
@@ -27,19 +29,12 @@
   transition: opacity 0.6s linear;
 }
 
-.modal__buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-}
-
 .modal__container {
   width: fit-content;
   max-width: 730px;
   width: 100%;
   height: auto;
+  min-height: 408px;
   border-radius: 8px;
   background-color: #fff;
   padding: 32px 50px;
@@ -53,14 +48,12 @@
 .modal__close-btn {
   position: absolute;
   top: 32px;
-  right: 32px;
+  right: 50px;
   width: 40px;
   height: 40px;
   border: none;
   background-color: transparent;
   background-image: url(../images/Close\ Icon.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
   opacity: 0.6;
   transition:
     filter 0.2s ease-in-out,
@@ -73,26 +66,24 @@
   opacity: 1;
 }
 
-.modal__close-btn_type_preview,
-#delete-modal .modal__close-btn {
-  top: -52px;
-  right: -52px;
+.modal__close-btn_type_preview {
+  top: 0;
+  right: -52.5px;
   background-image: url(../images/Close_Icon_White.svg);
-  filter: none;
+  background-repeat: no-repeat;
 }
 
-.modal__close-btn_type_preview:hover,
-#delete-modal .modal__close-btn:hover {
-  filter: none;
-  opacity: 1;
+.modal__close-btn_type_preview:hover {
+  opacity: 40%;
 }
 
 .modal__title {
-  margin: 0;
+  margin: 0 0 32px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 100%;
+  margin: 0;
 }
 
 .modal__form {
@@ -105,7 +96,7 @@
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 110%;
+  line-height: 110.00000000000001%;
   color: #212121b2;
   opacity: 70%;
 }
@@ -157,6 +148,7 @@
   gap: 8px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease;
+  border: none;
   outline: none;
   box-shadow: none;
   cursor: pointer;
@@ -200,59 +192,20 @@
   font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
-.modal__delete-btn {
-  width: 156px;
-  height: 52px;
-  padding: 18px 32px;
-  background-color: #ff6565;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-family: Poppins, Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-.modal__delete-btn:hover {
-  background-color: #ff3333;
-}
-
-.modal__cancel-btn {
-  width: 156px;
-  height: 52px;
-  padding: 18px 32px;
-  background-color: transparent;
-  color: #212121;
-  border: 1px solid #212121;
-  border-radius: 8px;
-  font-family: Poppins, Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-.modal__cancel-btn:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
 @media screen and (max-width: 768px) {
   .modal__container {
     width: 300px;
-    min-height: auto;
+    min-height: 336px;
     padding: 24px 16px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
     box-sizing: border-box;
   }
 
   .modal__title {
     font-size: 20px;
-    line-height: 120%;
   }
 
   .modal__image {
@@ -260,14 +213,22 @@
   }
 
   .modal__close-btn {
-    top: 16px;
-    right: 16px;
+    position: absolute;
+    top: 26px;
+    right: 22px;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
   }
 
-  .modal__close-btn_type_preview,
-  #delete-modal .modal__close-btn {
-    top: -40px;
-    right: 0px;
+  .modal__close-btn_type_preview {
+    /*FIXME: Button is constrained to the left of the image container*/
+    position: relative;
+    top: -5px;
+    right: 0;
   }
 
   .modal__input {
@@ -279,27 +240,11 @@
   }
 
   .modal__submit-btn {
-    width: 100%;
     max-width: 100%;
     margin-top: auto;
     padding: 14px 0;
     font-size: 14px;
     font-weight: 600;
     border-radius: 8px;
-  }
-
-  .modal__buttons {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 12px;
-  }
-
-  .modal__delete-btn,
-  .modal__cancel-btn {
-    width: 100%;
-    max-width: 100%;
-    height: 44px;
-    padding: 12px 0;
   }
 }
