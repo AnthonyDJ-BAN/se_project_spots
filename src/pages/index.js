@@ -177,7 +177,7 @@ function handleDeleteSubmit(evt) {
   evt.preventDefault();
 
   const submitBtn = evt.submitter;
-  setButtonText(submitBtn, true, "Deleting...");
+  setButtonText(submitBtn, true, "Delete", "Deleting...");
 
   api
     .deleteCard(selectedCardId)
@@ -187,7 +187,7 @@ function handleDeleteSubmit(evt) {
     })
     .catch(console.error)
     .finally(() => {
-      setButtonText(submitBtn, false);
+      setButtonText(submitBtn, false, "Delete");
     });
 }
 
