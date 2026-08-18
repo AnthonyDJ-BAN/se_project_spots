@@ -4,12 +4,12 @@ class Api {
     this._headers = headers;
   }
 
-  _checkResponse(res) {
+  _checkResponse = (res) => {
     if (res.ok) {
       return res.json();
     }
     return Promise.reject(`Error: ${res.status}`);
-  }
+  };
 
   getAppInfo() {
     return Promise.all([this.getInitialCards(), this.getUserInfo()]);
@@ -64,12 +64,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(this._checkResponse);
   }
 
   getUserInfo() {
