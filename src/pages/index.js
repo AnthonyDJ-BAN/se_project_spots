@@ -16,16 +16,6 @@ const api = new Api({
   },
 });
 
-//This brings the other cards
-
-// const api = new Api({
-//   baseUrl: "https://spots-api.en.tripleten-services.com/v1",
-//   headers: {
-//     authorization: "f9b1bdeb-d31f-4492-a41e-e25ff689a246",
-//     "Content-Type": "application/json",
-//   },
-// });
-
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
